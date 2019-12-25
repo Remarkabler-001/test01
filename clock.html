@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			canvas {
+				background-color: lightpink;
+			}
+		</style>
+	</head>
+	<body>
+		<canvas id="mycanvas" width="600" height="600" class="canvas"></canvas>
+	</body>
+	<script type="text/javascript">
+		var canvas = document.getElementById('mycanvas');
+		var ctx = canvas.getContext('2d');
+		// ctx.fillStyle='yellow';
+		// ctx.fillRect(200,100,300,150);
+
+		ctx.translate(300, 300);
+		ctx.beginPath();
+		ctx.strokeStyle = 'green';
+		ctx.arc(0, 0, 150, 0, Math.PI * 2, true);
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.fillStyle = 'pink';
+		ctx.arc(0, 0, 149, 0, Math.PI * 2, true);
+		ctx.fill();
+		ctx.beginPath();
+
+		for (var i = 0; i < 12; i++) {
+			ctx.rotate(Math.PI / 6);
+			ctx.moveTo(150, 0);
+			ctx.lineTo(120, 0);
+		}
+		ctx.stroke();
+		ctx.beginPath();
+
+		for (var i = 0; i < 60; i++) {
+			ctx.rotate(Math.PI / 30);
+			ctx.moveTo(150, 0);
+			ctx.lineTo(140, 0);
+		}
+		ctx.beginPath();
+		ctx.fillStyle = 'black';
+		ctx.arc(0, 0, 4, 0, Math.PI * 2, true);
+		ctx.fill();
+		ctx.beginPath();
+
+		ctx.stroke();
+		ctx.beginPath();
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, -60);
+		ctx.lineWidth = 3;
+		ctx.strokeStyle = 'black';
+		ctx.stroke();
+
+		ctx.beginPath();
+		ctx.rotate(Math.PI / 6);
+		ctx.moveTo(0, 0);
+		ctx.lineTo(0, -100);
+		ctx.lineWidth = 1;
+		ctx.strokeStyle = 'black';
+		ctx.stroke();
+	</script>
+</html>
